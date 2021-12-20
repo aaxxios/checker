@@ -1,0 +1,45 @@
+<head>
+    <title>Plagiarism checker</title>
+    <style>
+        .container {
+            max-width: 100%;
+            border: 2px solid red;
+        }
+        .left {
+            width: 50%;
+            margin: auto;
+            float: left;
+            border: 2px solid black;
+        }
+
+        .left form[type=input] {
+            padding: 10px;
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+        }
+    </style>
+</head>
+<html>
+    <body>
+        <div class="container">
+            <div class="left">
+                <form action="{% url 'checker:process' %}" method="post" style="text-align: center;">
+                    {% csrf_token %}
+                    <p>Text:</p>
+                    <input type="text" width="40px" name="data" height="40px">
+            
+                    <input type="submit" value="Subit">
+                </form>
+            </div>
+
+            <div class="right">
+                <h1>Welcome to Plag Checker</h1>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
